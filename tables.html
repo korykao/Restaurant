@@ -161,7 +161,15 @@
 		.empty();
 		$(reservationsData)
 		.empty();
-		json = [];
+		app.get("/api/waitlist", function(req, res)
+{
+  waitlistData = []
+  return res.json(waitlistData);
+  app.get("/api/reserve", function(req, res)
+{
+  reservationsData = []
+  return res.json(reservationsData);
+});
 
 	}
 
