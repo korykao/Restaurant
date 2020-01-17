@@ -9,8 +9,8 @@ var waitlistAmount = 5;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var reservationsData = [];
-var waitlistData = [];
+var reservationsData = {};
+var waitlistData = {};
 
 // Routes
 app.get("/", function(req, res) {
