@@ -153,15 +153,20 @@
 		var currentURL = window.location.origin;
 		$.ajax({url: currentURL + "/api/clear", method: "POST"})
 
-		clear(tableSection);
-		clear(waitlistSection);
-		clear(waitlistData);
-		clear(reservationsData);
+		$("#tableSection")
+		.empty();
+		$("#waitlistSection")
+		.empty();
+		$(waitlistData)
+		.empty();
+		$(reservationsData)
+		.empty();
 
 	}
 
 	$("#clear").on('click', function(){
 		alert("Clearing...");
+
 		clearTable();
 
 		// Refresh the page after data is cleared
