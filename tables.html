@@ -157,6 +157,10 @@
 
 	$("#clear").on('click', function(){
 		alert("Clearing...");
+		clear(tableSection);
+		clear(waitlistSection);
+		clear(waitlistData);
+		clear(reservationsData);
 		clearTable();
 
 		// Refresh the page after data is cleared
