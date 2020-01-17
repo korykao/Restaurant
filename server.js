@@ -9,8 +9,8 @@ var waitlistAmount = 5;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var reservations = [];
-var waitlist = [];
+var reservationsData = [];
+var waitlistData = [];
 
 // Routes
 app.get("/", function(req, res) {
@@ -27,12 +27,12 @@ app.get("/reserve", function(req, res) {
 
 // Displays all characters
 app.get("/api/tables", function(req, res) {
-  return res.json(reservations);
+  return res.json(reservationsData);
 });
 
 app.get("/api/waitlist", function(req, res)
 {
-  return res.json(waitlist);
+  return res.json(waitlistData);
 });
 
 app.post("/api/tables", function(req, res)
@@ -40,13 +40,13 @@ app.post("/api/tables", function(req, res)
   var newReservation = req.body;
   if(tableAmount > 0)
   {
-    reservations.push(newReservation);
+    reservationsData.push(newReservation);
     tableAmount--;
     res.json(newReservation);
   }
   else if(waitlistAmount > 0)
   {
-    waitlist.push(newReservation);
+    waitlistData.push(newReservation);
     waitlistAmount--;
     res.json(newReservation);
   }
