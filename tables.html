@@ -161,14 +161,6 @@
 		.empty();
 		$(reservationsData)
 		.empty();
-
-		app.post("/api/clear", function (req, res) {
-  while (waitlistData.length)
-	tables.pop();
-	
-	app.post("/api/clear", function (req, res) {
-  while (reservationsData.length)
-    tables.pop();
 });
 		
 
